@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{EC1A161A-156A-4056-878B-2E7C527E5888}</ProjectGuid>
+    <BSP_ID>KEIL:Keil/STM32F1xx_DFP</BSP_ID>
+    <BSP_VERSION>2.3.0</BSP_VERSION>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.sysprogs.toolchains.nongnu.armcc</ToolchainID>
+    <ToolchainVersion>5.x//r1</ToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.sysprogs.toolchains.nongnu.armcc</ToolchainID>
+    <ToolchainVersion>5.x//r1</ToolchainVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\HARDWARE\LED;..\..\..\..\SYSTEM\delay;..\..\..\..\SYSTEM\sys;..\..\..\..\SYSTEM\usart;..\..\..\..\USER;..\..\..\..\STM32F10x_FWLib\inc;..\..\..\..\CORE;..\..\..\..\HARDWARE\ADC;..\..\..\..\HARDWARE\CAN;..\..\..\..\HARDWARE\GPIO;..\..\..\..\HARDWARE\IWDG;..\..\..\..\HARDWARE\TIME;..\..\..\..\HARDWARE\USART2;..\..\..\..\HARDWARE\JQ8X00;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STM32F10X_MD;USE_STDPERIPH_DRIVER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+      <CPPLanguageStandard />
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalOptions />
+    </Link>
+    <KeilSettingsContainer>
+      <KeilCPUType>Cortex-M3</KeilCPUType>
+    </KeilSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\HARDWARE\LED;..\..\..\..\SYSTEM\delay;..\..\..\..\SYSTEM\sys;..\..\..\..\SYSTEM\usart;..\..\..\..\USER;..\..\..\..\STM32F10x_FWLib\inc;..\..\..\..\CORE;..\..\..\..\HARDWARE\ADC;..\..\..\..\HARDWARE\CAN;..\..\..\..\HARDWARE\GPIO;..\..\..\..\HARDWARE\IWDG;..\..\..\..\HARDWARE\TIME;..\..\..\..\HARDWARE\USART2;..\..\..\..\HARDWARE\JQ8X00;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STM32F10X_MD;USE_STDPERIPH_DRIVER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+      <CPPLanguageStandard />
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\USER\main.c" />
+    <ClCompile Include="..\..\..\..\USER\stm32f10x_it.c" />
+    <ClCompile Include="..\..\..\..\USER\system_stm32f10x.c" />
+    <ClCompile Include="..\..\..\..\USER\VersionInformation.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\USART2\usart2.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\CAN\can.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\GPIO\gpio.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\IWDG\iwdg.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\LED\led.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\TIME\time.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\ADC\adc.c" />
+    <ClCompile Include="..\..\..\..\HARDWARE\JQ8X00\JQ8X00.c" />
+    <ClCompile Include="..\..\..\..\SYSTEM\delay\delay.c" />
+    <ClCompile Include="..\..\..\..\SYSTEM\sys\sys.c" />
+    <ClCompile Include="..\..\..\..\CORE\core_cm3.c" />
+    <ClCompile Include="..\..\..\..\CORE\startup_stm32f10x_hd.s" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\misc.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_gpio.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_rcc.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_usart.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_can.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_tim.c" />
+    <ClCompile Include="..\..\..\..\STM32F10x_FWLib\src\stm32f10x_iwdg.c" />
+    <None Include="mcu.props" />
+    <ClInclude Include="..\..\..\..\USER\sys_config.h" />
+    <ClInclude Include="..\..\..\..\USER\VersionInformation.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\USART2\usart2.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\ADC\adc.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\CAN\can.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\GPIO\gpio.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\IWDG\iwdg.h" />
+    <ClInclude Include="..\..\..\..\HARDWARE\TIME\time.h" />
+    <None Include="..\..\..\..\README.TXT" />
+    <ClInclude Include="$(BSP_ROOT)\Device\Include\stm32f10x.h" />
+    <None Include="VoicePlayer_Node_Can-Debug.vgdbsettings" />
+    <None Include="VoicePlayer_Node_Can-Release.vgdbsettings" />
+    <None Include="MCU.xml" />
+  </ItemGroup>
+</Project>
